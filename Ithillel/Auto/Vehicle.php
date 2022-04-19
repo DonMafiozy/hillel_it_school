@@ -1,5 +1,7 @@
 <?php
 
+namespace Ithillel\Auto;
+
 class Vehicle extends VehicleAbstract implements MovableInterface
 {
 
@@ -7,19 +9,19 @@ class Vehicle extends VehicleAbstract implements MovableInterface
 
     public function start()
     {
-       if ($this->getStatus() == self::VEHICLE_STATUS_MOT_MOVE) {
-           $this->setStatus(self::VEHICLE_STATUS_WAITING);
-           echo $this->getName()  . ' ready for moving' . PHP_EOL;
-       } else {
-           echo 'Engine already started' . PHP_EOL;
-       }
+        if ($this->getStatus() == self::VEHICLE_STATUS_MOT_MOVE) {
+            $this->setStatus(self::VEHICLE_STATUS_WAITING);
+            echo $this->getName() . ' ready for moving' . PHP_EOL;
+        } else {
+            echo 'Engine already started' . PHP_EOL;
+        }
     }
 
     public function stop()
     {
         if ($this->getStatus() == self::VEHICLE_STATUS_WAITING || $this->getStatus() == self::VEHICLE_STATUS_MOVE) {
             $this->setStatus(self::VEHICLE_STATUS_MOT_MOVE);
-            echo $this->getName()  . ' Stopped' . PHP_EOL;
+            echo $this->getName() . ' Stopped' . PHP_EOL;
         } else {
             echo 'Engine already stopped' . PHP_EOL;
         }
@@ -28,7 +30,7 @@ class Vehicle extends VehicleAbstract implements MovableInterface
     public function up(int $unit)
     {
         if ($this->getStatus() == self::VEHICLE_STATUS_MOT_MOVE) {
-            echo 'Cant increase speed, before need to use Start() '  . PHP_EOL;
+            echo 'Cant increase speed, before need to use Start() ' . PHP_EOL;
             return;
         }
 
@@ -56,7 +58,7 @@ class Vehicle extends VehicleAbstract implements MovableInterface
     public function down(int $unit)
     {
         if ($this->getStatus() == self::VEHICLE_STATUS_MOT_MOVE) {
-            echo 'Can not decrease speed, before need to use start() and up() '  . PHP_EOL;
+            echo 'Can not decrease speed, before need to use start() and up() ' . PHP_EOL;
             return;
         }
 

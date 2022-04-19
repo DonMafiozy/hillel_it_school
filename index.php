@@ -1,24 +1,18 @@
 <?php
 
-include 'MovableInterface.php';
-include 'VehicleAbstract.php';
-include 'Vehicle.php';
-include 'Sedan.php';
-include 'Coupe.php';
+include 'bootstrap.php';
 
-$sedanCar = new Sedan('Kia', 'RIO MY21', 200);
-$sedanCar->start();
-$sedanCar->up(50);
-$sedanCar->up(500);
-$sedanCar->down(20);
-$sedanCar->down(200);
-$sedanCar->stop();
+use Ithillel\Auto\Sedan;
+use Ithillel\Auto\Suv;
 
-$coupeCar = new Coupe('Chevrolet', 'Corvette', 325);
-$coupeCar->start();
-$coupeCar->up(50);
-$coupeCar->up(500);
-$coupeCar->down(20);
-$coupeCar->down(500);
-$coupeCar->stop();
+echo 'The count of driving wheels for Mercedes-Benz GL-clas is: '  . Suv::getDrivingWheels() . PHP_EOL;
+
+echo 'Count of driving wheels for Sedan usually ' . Sedan::getDrivingWheels() . PHP_EOL;
+
+$suv = new Suv('Lexus', 'LX570', 2015);
+echo $suv->getDescription() . PHP_EOL;
+
+$offer = new \Ithillel\Offer\Sedan();
+
+echo $offer->getTitle('Toyota') . PHP_EOL;
 

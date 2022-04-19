@@ -1,5 +1,6 @@
 <?php
 
+namespace Ithillel\Auto;
 abstract class VehicleAbstract
 {
     const VEHICLE_STATUS_MOT_MOVE = 0;
@@ -7,6 +8,8 @@ abstract class VehicleAbstract
     const VEHICLE_STATUS_WAITING = 1;
 
     const VEHICLE_STATUS_MOVE = 2;
+
+    protected static $drivingWheels = 2;
 
     protected $maxSpeed;
 
@@ -98,6 +101,19 @@ abstract class VehicleAbstract
     protected function getName()
     {
         return $this->getBrand() . ' - ' . $this->getModel();
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return 'The Car ' . $this->getName() . ' has ' . self::getDrivingWheels() . ' driving wheels' . PHP_EOL;
+    }
+
+    public static function getDrivingWheels()
+    {
+        return self::$drivingWheels;
     }
 
 }
