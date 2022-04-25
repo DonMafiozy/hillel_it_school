@@ -2,17 +2,18 @@
 
 include 'bootstrap.php';
 
-use Ithillel\Auto\Sedan;
-use Ithillel\Auto\Suv;
+use Ithillel\Auto\Coupe;
+use Ithillel\Auto\Accessories\Accessory;
+use Ithillel\Auto\Driver;
 
-echo 'The count of driving wheels for Mercedes-Benz GL-clas is: '  . Suv::getDrivingWheels() . PHP_EOL;
+$accessories = [
+    new Accessory('Coupe Wind Restrictor Glow Plate', 499),
+    new Accessory('Coverking Sun Shield / Shade', 45),
+    new Accessory('CORVETTE STORMPROOF OUTDOOR CAR COVER', 499),
+];
 
-echo 'Count of driving wheels for Sedan usually ' . Sedan::getDrivingWheels() . PHP_EOL;
+$car = new Coupe('Chevrolet', 'Corvette', 340, $accessories);
 
-$suv = new Suv('Lexus', 'LX570', 2015);
-echo $suv->getDescription() . PHP_EOL;
-
-$offer = new \Ithillel\Offer\Sedan();
-
-echo $offer->getTitle('Toyota') . PHP_EOL;
+$driver = new Driver('Oleg', 42);
+$driver->move($car, 'Kiev');
 

@@ -21,20 +21,26 @@ abstract class VehicleAbstract
 
     protected $model;
 
+    protected $accessories;
+
+    protected $engine;
+
+    protected $transmission;
+
     protected $statuses = [
         self::VEHICLE_STATUS_MOT_MOVE => 'Vehicle is stopped',
         self::VEHICLE_STATUS_WAITING => 'Vehicle waiting',
         self::VEHICLE_STATUS_MOVE => 'Vehicle is moving',
     ];
 
-    public function __construct($brand, $model, $maxSpeed)
+    public function __construct($brand, $model, $maxSpeed, array $accessories)
     {
         $this->brand = $brand;
         $this->model = $model;
         $this->maxSpeed = $maxSpeed;
+        $this->accessories = $accessories;
         $this->setCurrentSpeed(0);
         $this->setStatus(self::VEHICLE_STATUS_MOT_MOVE);
-
     }
 
     /**
