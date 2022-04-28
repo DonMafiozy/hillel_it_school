@@ -1,8 +1,12 @@
 <?php
 include 'bootstrap.php';
 
-use GuzzleHttp\Client;
+use RusDieInfo\Statistic;
 
-$client = new Client(['base_uri' => 'https://ithillel.ua/']);
-$response = $client->request('GET', '/');
-echo $response->getBody()->getContents();
+$dieInfo = new Statistic();
+$data = $dieInfo->getAsArrayByDate('27.04.2022');
+
+foreach ($data as $key => $value)
+{
+    echo $key . ':' . $value . PHP_EOL;
+}

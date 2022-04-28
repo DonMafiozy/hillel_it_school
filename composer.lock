@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab761826408cf7b1fb517fe96917661c",
+    "content-hash": "6b3b009d705add92156d256d0243b02a",
     "packages": [
+        {
+            "name": "donmafiozy/rusdieinfo",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DonMafiozy/rusdieinfo.git",
+                "reference": "9e3b492be2971f9074149ba933496897e86bf9d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DonMafiozy/rusdieinfo/zipball/9e3b492be2971f9074149ba933496897e86bf9d9",
+                "reference": "9e3b492be2971f9074149ba933496897e86bf9d9",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RusDieInfo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yaroslav Chychkan",
+                    "email": "ch.yaroslav@gmail.com"
+                }
+            ],
+            "description": "Losts Russians in war",
+            "support": {
+                "issues": "https://github.com/DonMafiozy/rusdieinfo/issues",
+                "source": "https://github.com/DonMafiozy/rusdieinfo/tree/1.0.3"
+            },
+            "time": "2022-04-28T12:31:31+00:00"
+        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "7.4.0",
