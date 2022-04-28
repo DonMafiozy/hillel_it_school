@@ -1,0 +1,15 @@
+{
+    "name": "donmafiozy/it_school",
+    "description": "Composer repository for lessons",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "7.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yaroslav Chychkan",
+            "email": "ch.yaroslav@gmail.com"
+        }
+    ]
+}
